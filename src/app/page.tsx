@@ -1035,6 +1035,23 @@ export default function Home() {
                   Gdpr
                 </a>
               </div>
+
+              <a
+                href="https://sky.ro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm font-light text-[color:var(--muted)] transition-colors hover:text-[color:var(--accent)]"
+              >
+                <span>Powered by</span>
+                <Image
+                  src="/skyro_logo_wide.png"
+                  alt="sky.ro"
+                  width={92}
+                  height={20}
+                  className="h-5 w-auto opacity-90"
+                />
+              </a>
+
               <div className="text-center text-sm font-light text-[color:var(--muted)] lg:text-right">
                 © {new Date().getFullYear()} ABTdental Clinic. Toate drepturile rezervate.
               </div>
