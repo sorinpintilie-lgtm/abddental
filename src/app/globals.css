@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --background-light: #fafbfc;
+  --foreground: #201E1F;
+  --muted: #6c757d;
+  --card: #ffffff;
+  --stroke: rgba(32, 30, 31, 0.1);
+  --accent: #1BA5EE;
+  --accent2: #0d8fd4;
+  --dark-accent: #201E1F;
+  --dark-accent-light: #2a2829;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 150;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 28%, transparent);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    backdrop-filter: blur(14px);
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .ring-accent {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--accent) 35%, transparent),
+      0 12px 48px rgba(37, 99, 235, 0.16);
+  }
+
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.35;
+    border-radius: inherit;
+  }
+
+  .decorative-lines {
+    position: relative;
+  }
+  .decorative-lines::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(90deg, rgba(27, 165, 238, 0.12) 1px, transparent 1px),
+      linear-gradient(rgba(27, 165, 238, 0.12) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .decorative-dots {
+    position: relative;
+  }
+  .decorative-dots::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(27, 165, 238, 0.2) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .decorative-curve {
+    position: relative;
+    overflow: hidden;
+  }
+  .decorative-curve::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgba(27, 165, 238, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .decorative-squares {
+    position: relative;
+  }
+  .decorative-squares::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(27, 165, 238, 0.18);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  .decorative-squares::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed rgba(27, 165, 238, 0.18);
+    border-radius: 12px;
+    pointer-events: none;
+  }
+}
