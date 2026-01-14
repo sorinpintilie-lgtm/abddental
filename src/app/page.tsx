@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/Reveal";
-import { Counter } from "@/components/Counter";
 import { InfiniteCarousel } from "@/components/InfiniteCarousel";
 import { Header } from "@/components/Header";
 import {
@@ -22,7 +21,6 @@ import {
 } from "@/components/DentalIcons";
 import {
   Star,
-  Facebook,
   Instagram,
   Mail,
   MapPin,
@@ -165,15 +163,6 @@ const benefits = [
     description: "Echipamente de ultimă generație pentru rezultate optime",
   },
 ];
-
-function Pill({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full border-2 border-[color:var(--accent)] bg-white/90 px-5 py-2.5 text-sm font-light tracking-tight text-[color:var(--dark-accent)] shadow-lg backdrop-blur-sm">
-      <span className="h-2 w-2 rounded-full bg-[color:var(--accent)] animate-pulse" />
-      {children}
-    </span>
-  );
-}
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -545,7 +534,7 @@ export default function Home() {
                           { icon: SparkleIcon, title: "Scanare digitală 3d", desc: "Fără amprente tradiționale incomode" },
                           { icon: LightningIcon, title: "Laser dentar", desc: "Tratamente minim invazive" },
                           { icon: ToothIcon, title: "Cad/cam", desc: "Restaurări în aceeași zi" },
-                        ].map((tech, idx) => (
+                        ].map((tech) => (
                           <div
                             key={tech.title}
                             className="group flex h-full items-start gap-4 rounded-2xl border-2 border-[color:var(--accent)]/10 bg-white p-5 transition-all hover:border-[color:var(--accent)] hover:shadow-lg"
@@ -602,7 +591,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-6xl px-4">
             <Reveal>
               <h2 className="text-center text-4xl font-light tracking-tight text-[color:var(--foreground)] sm:text-5xl">
-                Mărturii <span className="font-normal text-[color:var(--accent)]">pacienți</span>
+                Recenzii
               </h2>
             </Reveal>
 
@@ -619,7 +608,7 @@ export default function Home() {
                       ))}
                     </div>
                     <p className="mt-5 flex-1 text-base font-light leading-relaxed text-[color:var(--muted)]">
-                      "{testimonial.text}"
+                      &ldquo;{testimonial.text}&rdquo;
                     </p>
                     <p className="mt-5 font-medium text-[color:var(--foreground)]">
                       — {testimonial.name}

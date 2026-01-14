@@ -14,11 +14,11 @@ export function Counter({ end, duration = 2000, suffix = "", prefix = "" }: Coun
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimatedRef = useRef(false);
 
   useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
+    if (isInView && !hasAnimatedRef.current) {
+      hasAnimatedRef.current = true;
       let startTime: number | null = null;
       const startValue = 0;
 
@@ -36,7 +36,7 @@ export function Counter({ end, duration = 2000, suffix = "", prefix = "" }: Coun
 
       requestAnimationFrame(animate);
     }
-  }, [isInView, end, duration, hasAnimated]);
+  }, [isInView, end, duration]);
 
   return (
     <div ref={ref} className="text-4xl font-bold tracking-tight text-[color:var(--accent)] md:text-5xl">
