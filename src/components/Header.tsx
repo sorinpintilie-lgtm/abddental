@@ -49,7 +49,9 @@ export function Header({ phone }: HeaderProps) {
                 alt="ABT Dental Clinic"
                 width={120}
                 height={120}
-                className="h-auto w-[120px] object-contain"
+                className={`h-auto object-contain transition-[width] duration-300 md:w-[120px] ${
+                  isScrolled ? "w-[78px] sm:w-[92px]" : "w-[92px] sm:w-[104px]"
+                }`}
               />
             </a>
 
