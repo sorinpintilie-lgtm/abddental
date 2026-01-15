@@ -13,7 +13,8 @@
   --dark-accent-light: #2a2829;
 
   /* Fixed promo bar (replaces the old sticky note). */
-  --promo-bar-height: 44px;
+  /* Spec: 36–44px (default 40px). */
+  --promo-bar-height: 40px;
 }
 
 @theme inline {
