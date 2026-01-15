@@ -9,7 +9,7 @@ const PHONE_HREF = `tel:${PHONE_E164}`;
 const WHATSAPP_HREF = `https://wa.me/40720088880`;
 
 // Spec: 36–44px max.
-const BAR_HEIGHT_PX = 40;
+const BAR_HEIGHT_PX = 44;
 
 export function StickyNote() {
   return (
@@ -23,7 +23,7 @@ export function StickyNote() {
       }
       data-ui="promo-bar"
     >
-      <div className="mx-auto flex h-[40px] max-w-6xl items-center gap-3 overflow-x-auto whitespace-nowrap px-4 text-xs sm:text-sm">
+      <div className="mx-auto flex h-[44px] max-w-6xl items-center gap-3 overflow-x-auto whitespace-nowrap px-4 text-xs sm:text-sm">
         <div className="min-w-0 flex-1 truncate font-normal">
           Concept demo • Conținut orientativ • Dezvoltat de sky.ro •{" "}
           <a href={EMAIL_HREF} className="underline underline-offset-2">
@@ -35,22 +35,14 @@ export function StickyNote() {
           </a>
         </div>
 
-        <div className="flex shrink-0 items-center gap-3 font-normal">
-          <a href={EMAIL_HREF} className="underline underline-offset-2">
-            Email
-          </a>
-          <a href={PHONE_HREF} className="underline underline-offset-2">
-            Sună
-          </a>
-          <a
-            href={WHATSAPP_HREF}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-lg bg-[#2F80ED] px-3 py-1.5 text-xs font-normal text-white transition-colors hover:bg-[#2569c7] sm:text-sm"
-          >
-            WhatsApp
-          </a>
-        </div>
+        <a
+          href={WHATSAPP_HREF}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex shrink-0 items-center justify-center rounded-lg bg-[#2F80ED] px-3 py-1.5 text-xs font-normal text-white transition-colors hover:bg-[#2569c7] sm:text-sm"
+        >
+          WhatsApp
+        </a>
       </div>
     </div>
   );

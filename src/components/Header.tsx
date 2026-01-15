@@ -50,7 +50,7 @@ export function Header({ phone }: HeaderProps) {
                 width={120}
                 height={120}
                 className={`h-auto object-contain transition-[width] duration-300 md:w-[120px] ${
-                  isScrolled ? "w-[78px] sm:w-[92px]" : "w-[92px] sm:w-[104px]"
+                  isScrolled ? "w-[60px] sm:w-[69px]" : "w-[69px] sm:w-[78px]"
                 }`}
               />
             </a>
