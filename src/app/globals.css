@@ -11,6 +11,9 @@
   --accent2: #0d8fd4;
   --dark-accent: #201E1F;
   --dark-accent-light: #2a2829;
+
+  /* Fixed promo bar (replaces the old sticky note). */
+  --promo-bar-height: 44px;
 }
 
 @theme inline {
@@ -24,6 +27,9 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 150;
+
+  /* Ensure page content isn't covered by the fixed promo bar. */
+  padding-top: calc(var(--promo-bar-height) + env(safe-area-inset-top));
 }
 
 @layer base {

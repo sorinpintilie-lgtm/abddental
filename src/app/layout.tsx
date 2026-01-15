@@ -25,8 +25,8 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        {children}
         <StickyNote />
+        {children}
       </body>
     </html>
   );
